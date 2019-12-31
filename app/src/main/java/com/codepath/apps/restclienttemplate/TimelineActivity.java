@@ -1,13 +1,13 @@
 package com.codepath.apps.restclienttemplate;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 
-import com.codepath.apps.restclienttemplate.models.Tweet;
-import com.github.scribejava.apis.TwitterApi;
+import com.codepath.apps.restclienttemplate.Adapter.TweetsAdapter;
+import com.codepath.apps.restclienttemplate.models.tweetClass;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
@@ -19,18 +19,21 @@ import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
+// fixes rest client template issue
+import static com.codepath.apps.restclienttemplate.RestApplication.getRestClient;
+
 public class TimelineActivity extends AppCompatActivity {
 
     private RestClient client;
     RecyclerView rvTweets;
     private TweetsAdapter adapter;
-    private List<Tweet> tweets;
+    private List<tweetClass> tweets;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
-        client = RestApplication.getRestClient(this);
+        client = getRestClient(this);
 
         // Find the recycler view
            rvTweets = findViewById(R.id.rvTweets);
@@ -55,7 +58,7 @@ public class TimelineActivity extends AppCompatActivity {
                     try {
                         // convert each JSON object into a tweet object
                     JSONObject jsonTweetObject = response.getJSONObject(i);
-                     Tweet tweet = Tweet.fromJson(jsonTweetObject);
+                        tweetClass tweet = tweetClass.fromJson(jsonTweetObject);
                         // Add the tweet into our data source
                         tweets.add(tweet);
                         // notify the adapter

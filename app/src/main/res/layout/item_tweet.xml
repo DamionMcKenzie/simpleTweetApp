@@ -30,5 +30,5 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvScreenName"
         android:layout_toEndOf="@+id/ivProfileImage"
-        tools:text="This is a tweet!" />
+        tools:text="This is a tweetClass!" />
 </RelativeLayout>

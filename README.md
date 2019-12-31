@@ -10,21 +10,21 @@ The following **required** functionality is completed:
 
 - [ ] User can **sign in to Twitter** using OAuth login
 - [ ]	User can **view tweets from their home timeline**
-  - [ ] User is displayed the username, name, and body for each tweet
-  - [ ] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
+  - [ ] User is displayed the username, name, and body for each tweetClass
+  - [ ] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweetClass "8m", "7h"
 - [ ] User can refresh tweets timeline by pulling down to refresh
 
 The following **optional** features will be implemented later on:
 
 - [ ] User can view more tweets as they scroll with infinite pagination
-- [ ] User can tap a tweet to display a "detailed" view of that tweet
+- [ ] User can tap a tweetClass to display a "detailed" view of that tweetClass
 - [ ] User can open the twitter app offline and see last loaded tweets
 - [ ] On the Twitter timeline, leverage the CoordinatorLayout to apply scrolling behavior that hides / shows the toolbar.
 - [ ] Replace all icon drawables and other static image assets with [vector drawables](http://guides.codepath.com/android/Drawables#vector-drawables) where appropriate.
-- [ ] User can see embedded image media within the tweet detail view
+- [ ] User can see embedded image media within the tweetClass detail view
 - [ ] User sees an **indeterminate progress indicator** when any background or network task is happening
-- [ ] User can **see embedded image media within a tweet** on list or detail view.
-- [ ] User can **click a link within a tweet body** on tweet details view. The click will launch the web browser with relevant page opened.
+- [ ] User can **see embedded image media within a tweetClass** on list or detail view.
+- [ ] User can **click a link within a tweetClass body** on tweetClass details view. The click will launch the web browser with relevant page opened.
 - [ ] User can view following / followers list through any profile they view.
 - [ ] User is using **"Twitter branded" colors and styles**
 

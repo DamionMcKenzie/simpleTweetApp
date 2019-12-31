@@ -1,8 +1,8 @@
-package com.codepath.apps.restclienttemplate;
+package com.codepath.apps.restclienttemplate.Adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,17 +10,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.codepath.apps.restclienttemplate.models.Tweet;
+import com.codepath.apps.restclienttemplate.R;
+import com.codepath.apps.restclienttemplate.models.tweetClass;
 
 import java.util.List;
 
 public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.viewHolder> {
 
     private Context context;
-    private List<Tweet>tweets;
+    private List<tweetClass>tweets;
 
     //pass in context and list of tweets
-    public TweetsAdapter(Context context, List<Tweet> tweets) {
+    public TweetsAdapter(Context context, List<tweetClass> tweets) {
         this.context = context;
         this.tweets = tweets;
     }
@@ -37,7 +38,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.viewHolder
     // bind values based on the position of the element
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
-      Tweet tweet = tweets.get(position);
+        tweetClass tweet = tweets.get(position);
       holder.tvBody.setText(tweet.body);
       holder.tvScreenName.setText(tweet.user.screenName);
         Glide.with(context).load(tweet.user.profileImageUrl).into(holder.ivProfileImage);
@@ -48,7 +49,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.viewHolder
         return tweets.size();
     }
 
-    // define the viewholder
+    // define the view holder
      public class viewHolder extends RecyclerView.ViewHolder{
           public ImageView ivProfileImage;
           public TextView tvScreenName;
@@ -64,9 +65,4 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.viewHolder
 
         }
     }
-    
-
-
-
-
 }
